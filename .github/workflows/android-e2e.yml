@@ -17,8 +17,7 @@ permissions:
 jobs:
   build-and-test:
     name: 🚀 Enterprise Android E2E Pipeline (21 Stages)
-    runs-[#1]: ubuntu-latest
-    runs-on: macos-13 # macOS runner for hardware acceleration KVM support with Android Emulator
+    runs-on: ubuntu-latest
 
     steps:
       # Stage 1: Checkout Repository
