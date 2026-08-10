@@ -7,9 +7,6 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   build:
     name: 🔨 Build Android Application (.APK)
@@ -26,10 +23,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 🤖 Setup Android SDK
-        uses: android-actions/setup-android@v3
-        continue-on-error: true
-
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -38,15 +31,13 @@ jobs:
       - name: 🔨 Build Android APK Binary
         continue-on-error: true
         run: |
-          if [ -f "$GITHUB_WORKSPACE/dental_clinic_app.apk" ]; then
+          if [ -f "dental_clinic_app.apk" ]; then
             echo "✅ Verified production Android APK: dental_clinic_app.apk"
           else
-            echo "Building Android App APK package..."
-            cd "$GITHUB_WORKSPACE/Frontend"
+            cd Frontend
             npm install || true
             npm run build || true
           fi
-          exit 0
 
       - name: 📦 Upload APK Artifact
         uses: actions/upload-artifact@v4
@@ -56,4 +47,3 @@ jobs:
           name: dental-clinic-app-apk
           path: dental_clinic_app.apk
           if-no-files-found: ignore
-          retention-days: 30
