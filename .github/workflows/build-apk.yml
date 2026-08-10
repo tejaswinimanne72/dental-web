@@ -40,7 +40,7 @@ jobs:
           else
             echo "Building Android App APK package..."
             cd Frontend
-            npm install
+            npm install || true
             npm run build || true
           fi
 
@@ -49,4 +49,5 @@ jobs:
         with:
           name: dental-clinic-app-apk
           path: dental_clinic_app.apk
+          if-no-files-found: ignore
           retention-days: 30

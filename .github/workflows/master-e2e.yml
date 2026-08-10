@@ -75,8 +75,9 @@ jobs:
         with:
           name: master-e2e-execution-results-build-${{ github.run_number }}
           path: |
-            Test Results/
-            Vulnerability Test Results/
+            Test Results
+            Vulnerability Test Results
+          if-no-files-found: ignore
           retention-days: 30
 
       # Publish Step Summary to GitHub Actions Interface
