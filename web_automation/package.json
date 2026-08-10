@@ -1,0 +1,17 @@
+{
+  "name": "enterprise-selenium-live-e2e-framework",
+  "version": "2.0.0",
+  "description": "Enterprise-Grade Selenium Web E2E Testing & Live GitHub Pages Deployment CI/CD Framework",
+  "main": "runners/masterWebRunner.js",
+  "type": "commonjs",
+  "scripts": {
+    "test:live": "node runners/masterWebRunner.js",
+    "verify-deployment": "node utils/deploymentValidator.js"
+  },
+  "dependencies": {
+    "chromedriver": "^131.0.5",
+    "dotenv": "^16.6.1",
+    "exceljs": "^4.4.0",
+    "selenium-webdriver": "^4.46.0"
+  }
+}

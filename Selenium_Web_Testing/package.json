@@ -1,0 +1,17 @@
+{
+  "name": "dental-clinic-selenium-e2e-tests",
+  "version": "1.0.0",
+  "description": "Complete Selenium Web End-to-End Automation & Excel Analysis Report Framework in Node.js",
+  "main": "run_selenium_tests.js",
+  "type": "commonjs",
+  "scripts": {
+    "test:web": "node run_selenium_tests.js",
+    "generate-report": "node utils/excelReporter.js"
+  },
+  "dependencies": {
+    "chromedriver": "^131.0.5",
+    "dotenv": "^16.6.1",
+    "exceljs": "^4.4.0",
+    "selenium-webdriver": "^4.46.0"
+  }
+}

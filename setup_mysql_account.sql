@@ -1,0 +1,12 @@
+-- 1. CREATE DEDICATED MYSQL DATABASE USER
+CREATE USER IF NOT EXISTS 'dental_user'@'localhost' IDENTIFIED BY 'dental123';
+CREATE USER IF NOT EXISTS 'dental_user'@'%' IDENTIFIED BY 'dental123';
+
+-- 2. GRANT FULL PRIVILEGES ON DENTAL CLINIC DATABASE
+GRANT ALL PRIVILEGES ON dental_clinic.* TO 'dental_user'@'localhost';
+GRANT ALL PRIVILEGES ON dental_clinic.* TO 'dental_user'@'%';
+
+FLUSH PRIVILEGES;
+
+-- 3. VERIFY CREATED MYSQL USERS
+SELECT User, Host FROM mysql.user WHERE User LIKE 'dental%';

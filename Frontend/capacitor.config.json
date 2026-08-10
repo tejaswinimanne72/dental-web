@@ -1,0 +1,15 @@
+{
+  "appId": "com.dentalclinic.app",
+  "appName": "Dental Clinic AI",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "server": {
+    "url": "http://172.23.20.192:5173",
+    "cleartext": true,
+    "androidScheme": "http"
+  }
+}

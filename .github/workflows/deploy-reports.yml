@@ -1,0 +1,27 @@
+name: 🌐 Deploy Automation Reports to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["📱 Enterprise Android E2E Appium & GitHub Pages CI/CD Pipeline"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    name: 🚀 Publish Live Dashboard & Execution Reports
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📁 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🌐 Deploy GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

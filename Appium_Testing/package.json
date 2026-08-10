@@ -1,0 +1,16 @@
+{
+  "name": "dental-clinic-appium-e2e-tests",
+  "version": "1.0.0",
+  "description": "Complete End-to-End Appium Mobile Automation Test Suite for Dental Clinic Android Application",
+  "main": "run_appium_tests.js",
+  "type": "commonjs",
+  "scripts": {
+    "test:mobile": "node run_appium_tests.js",
+    "generate-report": "node utils/excelReporter.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "exceljs": "^4.4.0",
+    "webdriverio": "^8.46.0"
+  }
+}
